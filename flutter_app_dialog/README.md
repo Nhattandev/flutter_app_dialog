@@ -31,3 +31,15 @@ showDialog(
                 );
               });
 ```
+### Payment dialog
+<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/payment_dialog.png?raw=true" width="240"/>
+
+```
+showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return BaseDialogWidget(
+                  child: PaymentDialog() ,
+                );
+              });
+```
