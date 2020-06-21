@@ -1,2 +1,2 @@
-## [0.0.2] - 2020-06-21
-release note: Update payment dialog. 
+## [0.1.0] - 2020-06-22
+release note: Update basic dialog. 
