@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: <Widget>[
             ///Tan.nguyen 6/21/20 : build info dialog
-            _baseButton(buttonName: 'Info Dialog', dialogWidget: InfoWidget()),
+            _baseButton(buttonName: 'Info Dialog', dialogWidget: InfoDialog()),
             SizedBox(height: 20,),
             ///Tan.nguyen 6/21/20 : build no internet connection dialog
             _baseButton(buttonName: 'No internet connection', dialogWidget: NoInternetConnectionDialog()),
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
               context: context,
               builder: (BuildContext context) {
                 return BaseDialogWidget(
-                  child: dialogWidget ?? InfoWidget(),
+                  child: dialogWidget ?? InfoDialog(),
                 );
               });
         },

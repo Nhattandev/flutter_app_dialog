@@ -2,8 +2,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '../../flutter_app_dialog.dart';
-class InfoWidget extends StatefulWidget {
-  const InfoWidget({
+class InfoDialog extends StatefulWidget {
+  const InfoDialog({
     Key key,
     this.dialogWidth,
     this.dialogHeight,
@@ -45,10 +45,10 @@ class InfoWidget extends StatefulWidget {
   final TextStyle buttonStyle;
   final Function onPressButton;
 
-  _InfoWidgetState createState() => _InfoWidgetState();
+  _InfoDialogState createState() => _InfoDialogState();
 }
 
-class _InfoWidgetState extends State<InfoWidget> {
+class _InfoDialogState extends State<InfoDialog> {
   @override
   void initState() {
     super.initState();
