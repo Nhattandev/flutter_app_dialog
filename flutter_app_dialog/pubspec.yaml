@@ -1,7 +1,6 @@
 name: flutter_app_dialog
 description: custom dialog
 version: 0.0.1
-author: Tan Nguyen <Nhattandev@gmail.com>
 homepage: https://github.com/Nhattandev/flutter_app_dialog.git
 
 environment:
