@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+
 import '../../flutter_app_dialog.dart';
 class InfoWidget extends StatefulWidget {
   const InfoWidget({

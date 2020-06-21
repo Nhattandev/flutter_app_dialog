@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _baseButton(buttonName: 'Info Dialog', dialogWidget: InfoWidget()),
             SizedBox(height: 20,),
             ///Tan.nguyen 6/21/20 : build no internet connection dialog
-            _baseButton(buttonName: 'No internet connection', dialogWidget: InfoWidget()),
+            _baseButton(buttonName: 'No internet connection', dialogWidget: NoInternetConnectionDialog()),
           ],
         ),
       ),
