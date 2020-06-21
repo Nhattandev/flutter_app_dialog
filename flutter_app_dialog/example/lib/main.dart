@@ -50,9 +50,18 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             ///Tan.nguyen 6/21/20 : build info dialog
             _baseButton(buttonName: 'Info Dialog', dialogWidget: InfoDialog()),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
+
             ///Tan.nguyen 6/21/20 : build no internet connection dialog
-            _baseButton(buttonName: 'No internet connection', dialogWidget: NoInternetConnectionDialog()),
+            _baseButton(buttonName: 'No Internet Connection', dialogWidget: NoInternetConnectionDialog()),
+            SizedBox(
+              height: 20,
+            ),
+
+            ///Tan.nguyen 6/21/20 : build payment dialog
+            _baseButton(buttonName: 'Payment Dialog', dialogWidget: PaymentDialog())
           ],
         ),
       ),
@@ -80,7 +89,10 @@ class _MyHomePageState extends State<MyHomePage> {
           buttonName ?? '',
           textAlign: TextAlign.center,
           overflow: TextOverflow.clip,
-          style: TextStyle(fontSize: 16, color: Colors.white,),
+          style: TextStyle(
+            fontSize: 16,
+            color: Colors.white,
+          ),
         ),
       ),
     );
