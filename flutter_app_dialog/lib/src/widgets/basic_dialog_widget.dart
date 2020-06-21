@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_dialog/flutter_app_dialog.dart';
 
-class BasicDialogWidget extends StatefulWidget {
-  const BasicDialogWidget(
+class BasicDialog extends StatefulWidget {
+  const BasicDialog(
       {Key key,
       this.dialogHeight,
       this.dialogWidth,
@@ -14,7 +14,7 @@ class BasicDialogWidget extends StatefulWidget {
       : super(key: key);
 
   @override
-  _BasicDialogWidgetState createState() => _BasicDialogWidgetState();
+  _BasicDialogState createState() => _BasicDialogState();
   final double dialogHeight;
   final double dialogWidth;
   final Color iconColor;
@@ -24,7 +24,7 @@ class BasicDialogWidget extends StatefulWidget {
   final String contentStyle;
 }
 
-class _BasicDialogWidgetState extends State<BasicDialogWidget> {
+class _BasicDialogState extends State<BasicDialog> {
   @override
   Widget build(BuildContext context) {
     return Container(

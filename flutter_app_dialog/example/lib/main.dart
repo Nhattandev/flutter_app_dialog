@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            _baseButton(buttonName: 'Basic Dialog',dialogWidget: BasicDialogWidget()),
+            _baseButton(buttonName: 'Basic Dialog',dialogWidget: BasicDialog()),
             SizedBox(
               height: 20,
             ),
