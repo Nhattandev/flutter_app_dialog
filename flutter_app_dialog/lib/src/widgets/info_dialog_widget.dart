@@ -1,7 +1,9 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../../flutter_app_dialog.dart';
+
 class InfoDialog extends StatefulWidget {
   const InfoDialog({
     Key key,
@@ -65,7 +67,9 @@ class _InfoDialogState extends State<InfoDialog> {
               buildTopDialog(),
               buildCenterDialog(),
               buildBottomDialog(),
-              SizedBox(height: 20,)
+              SizedBox(
+                height: 20,
+              )
             ],
           ),
         ));
@@ -119,8 +123,8 @@ class _InfoDialogState extends State<InfoDialog> {
           borderRadius: BorderRadius.all(Radius.circular(10)),
           color: widget.buttonColor ?? Color.fromRGBO(12, 209, 211, 1)),
       child: RawMaterialButton(
-        onPressed: (){
-          widget.onPressButton??Navigator.pop(context);
+        onPressed: () {
+          widget.onPressButton ?? Navigator.pop(context);
         },
         child: Text(
           widget.buttonName ?? "OK",

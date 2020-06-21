@@ -1,7 +1,7 @@
 # flutter_app_dialog
 
 flutter app dialog
-A Flutter plugin for iOS and Android for the simple dialogs.
+A Flutter plugin for iOS and Android for simple and easy implement dialogs.
 
 ## Installation
 

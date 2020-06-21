@@ -81,12 +81,14 @@ class _NoInternetConnectionDialogState extends State<NoInternetConnectionDialog>
       color: Colors.white,
       child: Center(
         child: Text(
-          widget.content ??
-              "Please check your connection status and try again",
+          widget.content ?? "Please check your connection status and try again",
           textAlign: TextAlign.center,
           overflow: TextOverflow.ellipsis,
-          style: widget.contentStyle ?? TextStyle(fontWeight: FontWeight.w600,
-          fontSize: 14,),
+          style: widget.contentStyle ??
+              TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 14,
+              ),
         ),
       ),
     );
