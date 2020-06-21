@@ -8,7 +8,8 @@ A Flutter plugin for iOS and Android for simple and easy implement dialogs.
 Add `flutter_app_dialog` to your `pubspec.yaml` dependencies. 
 ## Example
 ### Info Dialog
-![alt text](doc/info_dialog.png)
+<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/info_dialog.png?raw=true" width="240"/>
+
 ```
 showDialog(
               context: context,
@@ -19,7 +20,8 @@ showDialog(
               });
 ```
 ### No internet connection dialog
-![alt text](doc/no_internet_connection.png)
+<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/no_internet_connection.png?raw=true" width="240"/>
+
 ```
 showDialog(
               context: context,
