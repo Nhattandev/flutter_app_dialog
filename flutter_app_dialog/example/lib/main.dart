@@ -48,10 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            _baseButton(buttonName: 'Basic Dialog',dialogWidget: BasicDialog()),
+            _baseButton(buttonName: 'Basic Dialog', dialogWidget: BasicDialog()),
             SizedBox(
               height: 20,
             ),
+
             ///Tan.nguyen 6/21/20 : build info dialog
             _baseButton(buttonName: 'Info Dialog', dialogWidget: InfoDialog()),
             SizedBox(
@@ -65,7 +66,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             ///Tan.nguyen 6/21/20 : build payment dialog
-            _baseButton(buttonName: 'Payment Dialog', dialogWidget: PaymentDialog())
+            _baseButton(buttonName: 'Payment Dialog', dialogWidget: PaymentDialog()),
+            SizedBox(
+              height: 20,
+            ),
+
+            ///Tan.nguyen 8/11/20 : build rating dialog
+            _baseButton(
+                buttonName: 'Rating dialog',
+                dialogWidget: RatingDialog(
+                  onRatingSubmit: (value) {
+                    print('Rating value: $value');
+                  },
+                )),
           ],
         ),
       ),
