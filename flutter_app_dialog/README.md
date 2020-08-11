@@ -12,46 +12,62 @@ Add `flutter_app_dialog` to your `pubspec.yaml` dependencies.
 
 ```
 showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return BaseDialogWidget(
-                  child: BasicDialog() ,
-                );
-              });
+            context: context,
+            builder: (BuildContext context) {
+              return BaseDialogWidget(
+                child: BasicDialog() ,
+              );
+            });
 ```
 ### Info Dialog
 <img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/info_dialog.png?raw=true" width="240"/>
 
 ```
 showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return BaseDialogWidget(
-                  child: InfoDialog() ,
-                );
-              });
+            context: context,
+            builder: (BuildContext context) {
+              return BaseDialogWidget(
+                child: InfoDialog() ,
+              );
+            });
 ```
 ### No Internet Connection Dialog
 <img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/no_internet_connection.png?raw=true" width="240"/>
 
 ```
 showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return BaseDialogWidget(
-                  child: NoInternetConnectionDialog() ,
-                );
-              });
+            context: context,
+            builder: (BuildContext context) {
+              return BaseDialogWidget(
+                child: NoInternetConnectionDialog() ,
+              );
+            });
 ```
 ### Payment Dialog
 <img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/payment_dialog.png?raw=true" width="240"/>
 
 ```
 showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return BaseDialogWidget(
-                  child: PaymentDialog() ,
-                );
-              });
+            context: context,
+            builder: (BuildContext context) {
+              return BaseDialogWidget(
+                child: PaymentDialog() ,
+              );
+            });
+```
+### Rating Dialog
+<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/rating_dialog.png?raw=true" width="240"/>
+
+```
+showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return BaseDialogWidget(
+                child: RatingDialog(
+                  onRatingSubmit: (value) {
+                    print('Rating value: $value');
+                  },
+                ) ,
+              );
+            });
 ```
