@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_dialog/flutter_app_dialog.dart';
-import 'package:flutter_app_dialog/src/utils/widget_util.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rxdart/rxdart.dart';
 
 class RatingDialog extends StatefulWidget {
@@ -66,7 +66,7 @@ class _RatingDialogState extends State<RatingDialog> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: widget.dialogHeight ?? WidgetUtil.resizeByWidth(context, 300),
+        height: widget.dialogHeight ?? ScreenUtil().setHeight(300),
         width: widget.dialogWidth ?? MediaQuery.of(context).size.width,
         padding: EdgeInsets.only(left: 20, right: 20),
         child: SingleChildScrollView(
@@ -94,7 +94,7 @@ class _RatingDialogState extends State<RatingDialog> {
   Widget buildTopImage() {
     return Container(
       width: widget.topDialogWidth ?? MediaQuery.of(context).size.width,
-      height: widget.topDialogHeight ?? WidgetUtil.resizeByWidth(context, 90),
+      height: widget.topDialogHeight ?? ScreenUtil().setHeight(90),
       child: Center(
         child: widget.icon ??
             FlutterLogo(
@@ -108,16 +108,14 @@ class _RatingDialogState extends State<RatingDialog> {
   Widget buildCenterTittle() {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: WidgetUtil.resizeByWidth(context, 40),
+      height: ScreenUtil().setHeight(40),
       child: Text(
         widget.tittle ?? 'Enjoying MyApp ?',
         textAlign: TextAlign.center,
         maxLines: 2,
         style: widget.tittleStyle ??
             TextStyle(
-                fontSize: WidgetUtil.resizeByWidth(context, 20),
-                color: Color.fromRGBO(42, 42, 48, 1),
-                fontWeight: FontWeight.bold),
+                fontSize: ScreenUtil().setSp(20), color: Color.fromRGBO(42, 42, 48, 1), fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -126,7 +124,7 @@ class _RatingDialogState extends State<RatingDialog> {
   Widget buildCenterDescription() {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: WidgetUtil.resizeByWidth(context, 40),
+      height: ScreenUtil().setHeight(40),
       child: Text(
         widget.description ?? 'Tap a start to rate it on the App Store.',
         textAlign: TextAlign.center,
@@ -134,7 +132,7 @@ class _RatingDialogState extends State<RatingDialog> {
         overflow: TextOverflow.ellipsis,
         style: widget.descriptionStyle ??
             TextStyle(
-              fontSize: WidgetUtil.resizeByWidth(context, 14),
+              fontSize: ScreenUtil().setSp(14),
               color: Color.fromRGBO(130, 131, 147, 1),
               fontWeight: FontWeight.w500,
             ),
@@ -168,7 +166,7 @@ class _RatingDialogState extends State<RatingDialog> {
           }
           return Container(
               width: MediaQuery.of(context).size.width,
-              height: WidgetUtil.resizeByWidth(context, 50),
+              height: ScreenUtil().setHeight(50),
               child: Center(
                 child: ListView.separated(
                     separatorBuilder: ((BuildContext context, int index) => SizedBox(
@@ -201,7 +199,7 @@ class _RatingDialogState extends State<RatingDialog> {
         return snapshot.hasData && snapshot.data != null
             ? Container(
                 width: MediaQuery.of(context).size.width,
-                height: WidgetUtil.resizeByWidth(context, 40),
+                height: ScreenUtil().setHeight(40),
                 alignment: Alignment.center,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -218,7 +216,7 @@ class _RatingDialogState extends State<RatingDialog> {
                         child: Text(
                           widget.negativeButtonName ?? 'Cancel',
                           style: widget.negativeButtonStyle ??
-                              TextStyle(fontSize: WidgetUtil.resizeByWidth(context, 20), color: Colors.blue),
+                              TextStyle(fontSize: ScreenUtil().setSp(20), color: Colors.blue),
                         ),
                       ),
                     ),
@@ -234,7 +232,7 @@ class _RatingDialogState extends State<RatingDialog> {
                         child: Text(
                           widget.negativeButtonName ?? 'Submit',
                           style: widget.negativeButtonStyle ??
-                              TextStyle(fontSize: WidgetUtil.resizeByWidth(context, 20), color: Colors.blue),
+                              TextStyle(fontSize: ScreenUtil().setSp(20), color: Colors.blue),
                         ),
                       ),
                     ),

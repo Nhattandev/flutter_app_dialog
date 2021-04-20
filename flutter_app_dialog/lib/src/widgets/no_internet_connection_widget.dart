@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../flutter_app_dialog.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NoInternetConnectionDialog extends StatefulWidget {
   const NoInternetConnectionDialog(
@@ -39,7 +38,7 @@ class _NoInternetConnectionDialogState extends State<NoInternetConnectionDialog>
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: widget.dialogHeight ?? WidgetUtil.resizeByWidth(context, 300),
+        height: widget.dialogHeight ?? ScreenUtil().setHeight(300),
         width: widget.dialogWidth ?? MediaQuery.of(context).size.width,
         child: SingleChildScrollView(
           child: Column(
@@ -55,7 +54,7 @@ class _NoInternetConnectionDialogState extends State<NoInternetConnectionDialog>
   Widget buildTopDialog() {
     return Container(
       width: widget.topDialogWidth ?? MediaQuery.of(context).size.width,
-      height: widget.topDialogHeight ?? widget.dialogHeight ?? WidgetUtil.resizeByWidth(context, 80),
+      height: widget.topDialogHeight ?? widget.dialogHeight ?? ScreenUtil().setHeight(80),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(5),
@@ -76,7 +75,7 @@ class _NoInternetConnectionDialogState extends State<NoInternetConnectionDialog>
   Widget buildCenterDialog() {
     return Container(
       width: widget.centerDialogWidth ?? MediaQuery.of(context).size.width,
-      height: widget.centerDialogHeight ?? widget.dialogHeight ?? WidgetUtil.resizeByWidth(context, 220),
+      height: widget.centerDialogHeight ?? widget.dialogHeight ?? ScreenUtil().setHeight(220),
       padding: EdgeInsets.only(left: 10, right: 10),
       color: Colors.white,
       child: Center(

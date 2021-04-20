@@ -1,8 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
-import '../../flutter_app_dialog.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class InfoDialog extends StatefulWidget {
   const InfoDialog({
@@ -59,7 +58,7 @@ class _InfoDialogState extends State<InfoDialog> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: widget.dialogHeight ?? WidgetUtil.resizeByWidth(context, 300),
+        height: widget.dialogHeight ?? ScreenUtil().setHeight(300),
         width: widget.dialogWidth ?? MediaQuery.of(context).size.width,
         child: SingleChildScrollView(
           child: Column(
@@ -79,7 +78,7 @@ class _InfoDialogState extends State<InfoDialog> {
   Widget buildTopDialog() {
     return Container(
       width: widget.topDialogWidth ?? MediaQuery.of(context).size.width,
-      height: widget.topDialogHeight ?? widget.dialogHeight ?? WidgetUtil.resizeByWidth(context, 80),
+      height: widget.topDialogHeight ?? widget.dialogHeight ?? ScreenUtil().setHeight(80),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(5),
@@ -100,7 +99,7 @@ class _InfoDialogState extends State<InfoDialog> {
   Widget buildCenterDialog() {
     return Container(
       width: widget.centerDialogWidth ?? MediaQuery.of(context).size.width,
-      height: widget.centerDialogHeight ?? widget.dialogHeight ?? WidgetUtil.resizeByWidth(context, 130),
+      height: widget.centerDialogHeight ?? widget.dialogHeight ?? ScreenUtil().setHeight(130),
       padding: EdgeInsets.only(left: 10, right: 10),
       color: Colors.white,
       child: Center(
@@ -117,7 +116,7 @@ class _InfoDialogState extends State<InfoDialog> {
   Widget buildBottomDialog() {
     return Container(
       width: widget.buttonWidth ?? MediaQuery.of(context).size.width,
-      height: widget.buttonHeight ?? widget.dialogHeight ?? WidgetUtil.resizeByWidth(context, 50),
+      height: widget.buttonHeight ?? widget.dialogHeight ?? ScreenUtil().setHeight(50),
       margin: EdgeInsets.only(left: 20, right: 20),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),

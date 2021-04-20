@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// A [BaseDialogWidget] that wrap  [DialogWidget].
+///
 class BaseDialogWidget extends StatelessWidget {
   const BaseDialogWidget({
     Key key,

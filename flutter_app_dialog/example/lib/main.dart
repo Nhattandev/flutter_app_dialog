@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_dialog/flutter_app_dialog.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(MyApp());
@@ -88,30 +89,30 @@ class _MyHomePageState extends State<MyHomePage> {
   ///Tan.nguyen 6/20/20 : build base button
   Widget _baseButton({String buttonName, Widget dialogWidget}) {
     return Container(
-      width: WidgetUtil.resizeByWidth(context, 100),
-      height: WidgetUtil.resizeByWidth(context, 40),
-      child: FlatButton(
-        color: Color.fromRGBO(118, 80, 193, 1),
-        padding: EdgeInsets.zero,
-        onPressed: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return BaseDialogWidget(
-                  child: dialogWidget ?? InfoDialog(),
-                );
-              });
-        },
-        child: Text(
-          buttonName ?? '',
-          textAlign: TextAlign.center,
-          overflow: TextOverflow.clip,
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.white,
+        width: ScreenUtil().setWidth(100),
+        height: ScreenUtil().setHeight(40),
+        child: TextButton(
+          child: Text(
+            buttonName ?? '',
+            textAlign: TextAlign.center,
+            overflow: TextOverflow.clip,
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.white,
+            ),
           ),
-        ),
-      ),
-    );
+          style: TextButton.styleFrom(
+            backgroundColor: Color.fromRGBO(118, 80, 193, 1),
+          ),
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return BaseDialogWidget(
+                    child: dialogWidget ?? InfoDialog(),
+                  );
+                });
+          },
+        ));
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../flutter_app_dialog.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PaymentDialog extends StatefulWidget {
   final double dialogHeight;
@@ -43,7 +42,7 @@ class _PaymentDialogState extends State<PaymentDialog> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: widget.dialogHeight ?? WidgetUtil.resizeByWidth(context, 300),
+        height: widget.dialogHeight ?? ScreenUtil().setHeight(300),
         width: widget.dialogWidth ?? MediaQuery.of(context).size.width,
         child: SingleChildScrollView(
           child: Column(
@@ -73,7 +72,7 @@ class _PaymentDialogState extends State<PaymentDialog> {
   Widget buildIconDialog() {
     return Container(
         width: MediaQuery.of(context).size.width,
-        height: WidgetUtil.resizeByWidth(context, 42),
+        height: ScreenUtil().setHeight(42),
         child: Center(
           child: widget.icon ??
               Icon(
@@ -89,12 +88,12 @@ class _PaymentDialogState extends State<PaymentDialog> {
     return Container(
       width: MediaQuery.of(context).size.width,
       alignment: Alignment.center,
-      height: WidgetUtil.resizeByWidth(context, 21),
+      height: ScreenUtil().setHeight(21),
       child: Text(
         widget.paymentStatus ?? 'SUCCESSFUL',
         style: widget.paymentStatusStyle ??
             TextStyle(
-              fontSize: WidgetUtil.resizeByWidth(context, 14),
+              fontSize: ScreenUtil().setHeight(14),
               fontWeight: FontWeight.w700,
               color: Color.fromRGBO(4, 4, 15, 0.4),
             ),
@@ -106,16 +105,14 @@ class _PaymentDialogState extends State<PaymentDialog> {
   Widget buildMessageDialog() {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: WidgetUtil.resizeByWidth(context, 57),
+      height: ScreenUtil().setHeight(57),
       padding: EdgeInsets.only(left: 37, right: 37),
       child: Text(
         widget.message ?? 'Thank you for the payment',
         textAlign: TextAlign.center,
         style: widget.messageStyle ??
             TextStyle(
-                color: Color.fromRGBO(69, 90, 100, 1),
-                fontSize: WidgetUtil.resizeByWidth(context, 24),
-                fontWeight: FontWeight.bold),
+                color: Color.fromRGBO(69, 90, 100, 1), fontSize: ScreenUtil().setSp(24), fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -124,7 +121,7 @@ class _PaymentDialogState extends State<PaymentDialog> {
   Widget buildButtonDialog() {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: WidgetUtil.resizeByWidth(context, 44),
+      height: ScreenUtil().setHeight(44),
       margin: EdgeInsets.only(left: 20, right: 20),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),

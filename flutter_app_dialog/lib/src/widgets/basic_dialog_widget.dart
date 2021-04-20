@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_dialog/flutter_app_dialog.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BasicDialog extends StatefulWidget {
   const BasicDialog(
@@ -28,7 +28,7 @@ class _BasicDialogState extends State<BasicDialog> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: widget.dialogHeight ?? WidgetUtil.resizeByWidth(context, 300),
+        height: widget.dialogHeight ?? ScreenUtil().setWidth(300),
         width: widget.dialogWidth ?? MediaQuery.of(context).size.width,
         child: SingleChildScrollView(
           child: Column(
@@ -57,7 +57,7 @@ class _BasicDialogState extends State<BasicDialog> {
   Widget buildButtonClose() {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: WidgetUtil.resizeByWidth(context, 25),
+      height: ScreenUtil().setWidth(25),
       alignment: Alignment.centerRight,
       padding: EdgeInsets.only(left: 20, right: 20),
       child: InkWell(
@@ -77,7 +77,7 @@ class _BasicDialogState extends State<BasicDialog> {
   Widget buildTittleDialog() {
     return Container(
         width: MediaQuery.of(context).size.width,
-        height: WidgetUtil.resizeByWidth(context, 34),
+        height: ScreenUtil().setWidth(34),
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Text(
           widget.tittle ?? 'Example tittle',
@@ -86,7 +86,7 @@ class _BasicDialogState extends State<BasicDialog> {
           overflow: TextOverflow.ellipsis,
           style: widget.tittleStyle ??
               TextStyle(
-                  fontSize: WidgetUtil.resizeByWidth(context, 30),
+                  fontSize: ScreenUtil().setWidth(30),
                   color: Color.fromRGBO(42, 42, 48, 1),
                   fontWeight: FontWeight.bold),
         ));
@@ -96,7 +96,7 @@ class _BasicDialogState extends State<BasicDialog> {
   Widget buildContentDialog() {
     return Container(
         width: MediaQuery.of(context).size.width,
-        height: WidgetUtil.resizeByWidth(context, 100),
+        height: ScreenUtil().setWidth(100),
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Text(
           widget.content ??
@@ -106,7 +106,7 @@ class _BasicDialogState extends State<BasicDialog> {
           overflow: TextOverflow.ellipsis,
           style: widget.contentStyle ??
               TextStyle(
-                fontSize: WidgetUtil.resizeByWidth(context, 14),
+                fontSize: ScreenUtil().setWidth(14),
                 color: Color.fromRGBO(130, 131, 147, 1),
                 fontWeight: FontWeight.w500,
               ),
