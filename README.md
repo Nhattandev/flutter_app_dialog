@@ -8,7 +8,7 @@ A Flutter plugin for iOS and Android for simple and easy implement dialogs.
 Add `flutter_app_dialog` to your `pubspec.yaml` dependencies. 
 ## Example
 ### Basic Dialog
-<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/basic_dialog.png?raw=true" width="240"/>
+<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/doc/basic_dialog.png?raw=true" width="240"/>
 
 ```
 showDialog(
@@ -20,7 +20,7 @@ showDialog(
             });
 ```
 ### Info Dialog
-<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/info_dialog.png?raw=true" width="240"/>
+<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/doc/info_dialog.png?raw=true" width="240"/>
 
 ```
 showDialog(
@@ -32,7 +32,7 @@ showDialog(
             });
 ```
 ### No Internet Connection Dialog
-<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/no_internet_connection.png?raw=true" width="240"/>
+<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/doc/no_internet_connection.png?raw=true" width="240"/>
 
 ```
 showDialog(
@@ -44,7 +44,7 @@ showDialog(
             });
 ```
 ### Payment Dialog
-<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/payment_dialog.png?raw=true" width="240"/>
+<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/doc/payment_dialog.png?raw=true" width="240"/>
 
 ```
 showDialog(
@@ -56,7 +56,7 @@ showDialog(
             });
 ```
 ### Rating Dialog
-<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/flutter_app_dialog/doc/rating_dialog.png?raw=true" width="240"/>
+<img src="https://github.com/Nhattandev/flutter_app_dialog/blob/master/doc/rating_dialog.png?raw=true" width="240"/>
 
 ```
 showDialog(
