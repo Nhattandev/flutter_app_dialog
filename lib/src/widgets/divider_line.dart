@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+///Tan.nguyen 4/21/21 :
+///Define Divider Line
+///
+/// [width] width of divider line,
+/// [height] default is 0.5
+///
 class DividerLine extends StatelessWidget {
   final double width;
   final double height;

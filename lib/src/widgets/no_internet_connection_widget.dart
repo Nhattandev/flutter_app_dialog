@@ -1,6 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+///
+/// Define [NoInternetConnectionDialog]
+///
+/// Usage:
+/// ```dart
+/// NoInternetConnectionDialog(
+///   tittle: 'tittle',
+///   content: 'Your message',
+/// )
+/// ```
+/// See also:
+/// [dialogHeight] height of dialog default is 300
+/// [dialogWidth] width of dialog
+/// [tittle], [content] display title and content of dialog without default message
+/// [tittleStyle], [contentStyle] TextStyle
+///
+///
 class NoInternetConnectionDialog extends StatefulWidget {
   const NoInternetConnectionDialog(
       {Key key,

@@ -3,6 +3,33 @@ import 'package:flutter_app_dialog/flutter_app_dialog.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rxdart/rxdart.dart';
 
+///Tan.nguyen 4/21/21 :
+/// Define [RatingDialog] widget
+///
+/// Usage:
+/// ```dart
+/// RatingDialog(
+///   tittle: 'Successful',
+///   description: 'Thank you for the payment',
+///   onRatingSubmit: (value) {
+///   print('Rating value: $value');
+///   },
+/// )
+/// ```
+/// See also:
+/// [dialogHeight] height of dialog default is 300
+/// [dialogWidth] width of dialog
+/// [icon] icon of rating
+/// [tittle] as String: ex: enjoying my app
+/// [description] display description of dialog
+/// [tittle], [description] TextStyle
+/// [positiveButtonName] default is 'Submit'
+/// [negativeButtonName] default is 'Cancel'
+/// with custom  style, etc.. via [positiveButtonStyle], [negativeButtonStyle],
+/// and custom [positiveRatingColor], [negativeRatingColor]
+/// [onRatingSubmit] handle func onRating submit with specific value
+/// [onRatingCancel] handle func when cancel rating
+///
 class RatingDialog extends StatefulWidget {
   final double dialogHeight;
   final double dialogWidth;

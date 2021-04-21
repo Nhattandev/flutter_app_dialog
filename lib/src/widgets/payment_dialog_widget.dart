@@ -1,7 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+///Tan.nguyen 4/21/21 :
+/// Define [PaymentDialog]
+///
+/// Usage:
+/// ```dart
+/// PaymentDialog(
+///   paymentStatus: 'Successful',
+///   message: 'Thank you for the payment',
+/// )
+/// ```
+/// See also:
+/// [dialogHeight] height of dialog default is 300
+/// [dialogWidth] width of dialog
+/// [icon] icon of payment status
+/// [paymentStatus] as String: ex: Successful, or fail from partner, etc
+/// [message] display message of dialog
+/// [paymentStatusStyle], [messageStyle] TextStyle
+/// [buttonName] you can custom button name: ex: OK, cancel
+/// with custom size, style, etc.. via [buttonStyle], [buttonColor],
+/// [onPressButton] handle func onPress
+///
+///
 class PaymentDialog extends StatefulWidget {
   final double dialogHeight;
   final double dialogWidth;
