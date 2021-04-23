@@ -9,11 +9,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return ScreenUtilInit(
+      builder: () => MaterialApp(
+        theme: ThemeData(
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: MyHomePage(title: 'Flutter App Dialog'),
       ),
-      home: MyHomePage(title: 'Flutter App Dialog'),
     );
   }
 }
@@ -49,7 +51,12 @@ class _MyHomePageState extends State<MyHomePage> {
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            _baseButton(buttonName: 'Basic Dialog', dialogWidget: BasicDialog()),
+            _baseButton(
+                buttonName: 'Basic Dialog',
+                dialogWidget: BasicDialog(
+                  tittle: 'tittle',
+                  content: 'Your message',
+                )),
             SizedBox(
               height: 20,
             ),
@@ -89,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
   ///Tan.nguyen 6/20/20 : build base button
   Widget _baseButton({String buttonName, Widget dialogWidget}) {
     return Container(
-        width: ScreenUtil().setWidth(100),
+        width: ScreenUtil().setWidth(200),
         height: ScreenUtil().setHeight(40),
         child: TextButton(
           child: Text(

@@ -3,6 +3,26 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+///
+/// Define [InfoDialog]
+///
+/// Usage:
+/// ```dart
+/// InfoDialog(
+///   tittle: 'tittle',
+///   content: 'Your message',
+/// )
+/// ```
+/// See also:
+/// [dialogHeight] height of dialog default is 300
+/// [dialogWidth] width of dialog
+/// [tittle], [content] display title and content of dialog
+/// [tittleStyle], [contentStyle] TextStyle
+/// [buttonName] you can custom button name: ex: OK, cancel
+/// with custom size, style, etc.. via [buttonWidth], [buttonHeight], [buttonStyle]
+/// [onPressButton] handle func onPress
+///
+///
 class InfoDialog extends StatefulWidget {
   const InfoDialog({
     Key key,

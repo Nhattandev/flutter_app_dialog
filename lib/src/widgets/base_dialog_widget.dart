@@ -2,6 +2,18 @@ import 'package:flutter/material.dart';
 
 /// A [BaseDialogWidget] that wrap  [DialogWidget].
 ///
+/// The [child] argument must not be null.
+///
+/// Usage:
+/// ```dart
+/// showDialog(
+///   context: context,
+///   builder: (BuildContext context) {
+///   return BaseDialogWidget(
+///   child: InfoDialog(),);
+///  });
+/// ```
+///
 class BaseDialogWidget extends StatelessWidget {
   const BaseDialogWidget({
     Key key,
@@ -10,7 +22,7 @@ class BaseDialogWidget extends StatelessWidget {
     this.insetAnimationDuration = const Duration(milliseconds: 100),
     this.insetAnimationCurve = Curves.decelerate,
     this.shape,
-    this.child,
+    @required this.child,
     this.verticalSymmetric,
     this.horizontalSymmetric,
   }) : super(key: key);
