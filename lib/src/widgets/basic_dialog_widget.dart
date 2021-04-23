@@ -1,6 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+///Tan.nguyen 4/21/21 :
+///
+/// Define [BasicDialog]
+///
+/// Usage:
+/// ```dart
+/// BasicDialog(
+///   tittle: 'tittle',
+///   content: 'Your message',
+/// )
+/// ```
+/// See also:
+/// [dialogHeight] height of dialog default is 300
+/// [dialogWidth] width of dialog
+/// [tittle], [content] display title and content of dialog
+/// [tittleStyle], [contentStyle] TextStyle
+/// [iconColor] button close color
+///
+///
 class BasicDialog extends StatefulWidget {
   const BasicDialog(
       {Key key,
@@ -21,7 +40,7 @@ class BasicDialog extends StatefulWidget {
   final String tittle;
   final TextStyle tittleStyle;
   final String content;
-  final String contentStyle;
+  final TextStyle contentStyle;
 }
 
 class _BasicDialogState extends State<BasicDialog> {
