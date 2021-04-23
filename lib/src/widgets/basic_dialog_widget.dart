@@ -40,7 +40,7 @@ class BasicDialog extends StatefulWidget {
   final String tittle;
   final TextStyle tittleStyle;
   final String content;
-  final String contentStyle;
+  final TextStyle contentStyle;
 }
 
 class _BasicDialogState extends State<BasicDialog> {

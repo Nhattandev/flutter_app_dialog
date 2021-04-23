@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 ///Tan.nguyen 4/21/21 :
 /// Define [PaymentDialog]
 ///
@@ -26,7 +27,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class PaymentDialog extends StatefulWidget {
   final double dialogHeight;
   final double dialogWidth;
-  final Image icon;
+  final IconData icon;
   final Color iconColor;
   final double iconSize;
   final String paymentStatus;

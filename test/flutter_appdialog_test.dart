@@ -1,23 +1,52 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_app_dialog/flutter_app_dialog.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-
-
 void main() {
-  // Define a test.
-  testWidgets('Test BasicDialog', (WidgetTester tester) async {
-    // Create the widget by telling the tester to build it.
-    await tester.pumpWidget(BasicDialog(tittle: 'Example tittle', content: 'Example content',));
-
-
-    // Create the Finders.
-    final titleFinder = find.text('Example tittle');
-    final messageFinder = find.text('Example content');
-
-    // Use the `findsOneWidget` matcher provided by flutter_test to
-    // verify that the Text widgets appear exactly once in the widget tree.
-    expect(titleFinder, findsOneWidget);
-    expect(messageFinder, findsOneWidget);
+  group('Test Dialog', () {
+    testWidgets('Test Basic dialog', (WidgetTester tester) async {
+      await tester.pumpWidget(RootPage(
+        body: BasicDialog(
+          tittle: 'Alert',
+          content: 'This is a basic dialog',
+        ),
+      ));
+      await tester.pump();
+      expect(find.text('Alert'), findsOneWidget);
+      expect(find.text('This is a basic dialog'), findsOneWidget);
+      expect(find.byIcon(Icons.close), findsOneWidget);
+    });
+    testWidgets('Test info dialog', (WidgetTester tester) async {
+      await tester.pumpWidget(RootPage(
+        body: InfoDialog(
+          tittle: 'Tittle',
+          content: 'This is a info dialog',
+        ),
+      ));
+      await tester.pump();
+      expect(find.text('Tittle'), findsOneWidget);
+      expect(find.text('This is a info dialog'), findsOneWidget);
+      expect(find.byIcon(Icons.close), findsNothing);
+    });
   });
+}
 
+class RootPage extends StatelessWidget {
+  final Widget body;
+
+  const RootPage({Key key, this.body}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ScreenUtilInit(
+      allowFontScaling: false,
+      builder: () => MaterialApp(
+          home: Scaffold(
+              appBar: AppBar(
+                title: Text('Root Page'),
+              ),
+              body: body)),
+    );
+  }
 }

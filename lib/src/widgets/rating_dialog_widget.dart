@@ -257,8 +257,8 @@ class _RatingDialogState extends State<RatingDialog> {
                       },
                       child: Container(
                         child: Text(
-                          widget.negativeButtonName ?? 'Submit',
-                          style: widget.negativeButtonStyle ??
+                          widget.positiveButtonName ?? 'Submit',
+                          style: widget.positiveButtonStyle ??
                               TextStyle(fontSize: ScreenUtil().setSp(20), color: Colors.blue),
                         ),
                       ),
