@@ -22,11 +22,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///
 class BasicDialog extends StatefulWidget {
   const BasicDialog(
-      {Key key,
+      {Key? key,
       this.dialogHeight,
       this.dialogWidth,
-      this.tittle,
-      this.tittleStyle,
+      this.title,
+      this.titleStyle,
       this.content,
       this.contentStyle,
       this.iconColor})
@@ -34,13 +34,37 @@ class BasicDialog extends StatefulWidget {
 
   @override
   _BasicDialogState createState() => _BasicDialogState();
-  final double dialogHeight;
-  final double dialogWidth;
-  final Color iconColor;
-  final String tittle;
-  final TextStyle tittleStyle;
-  final String content;
-  final TextStyle contentStyle;
+  final double? dialogHeight;
+
+  /// Basic dialog content 2 parts: [title] and [content]
+  ///
+  /// [dialogHeight] Height of dialog
+  ///
+  /// If not set 300 is default value
+  final double? dialogWidth;
+
+  /// [dialogWidth] Width of dialog
+  ///
+  /// If not set MediaQuery.of(context).size.width is default(full size width of screen)
+  final Color? iconColor;
+
+  /// [iconColor] Color of button close
+  ///
+  /// Color.fromRGBO(141, 220, 191, 1) is default value
+  final String? title;
+
+  /// Title of dialog
+  final TextStyle? titleStyle;
+
+  /// Title style
+  ///
+  /// Default: TextStyle( fontSize: ScreenUtil().setWidth(30),color: Color.fromRGBO(42, 42, 48, 1),fontWeight: FontWeight.bold)
+  final String? content;
+
+  /// content of dialog
+  final TextStyle? contentStyle;
+
+  /// content style as [TextStyle]
 }
 
 class _BasicDialogState extends State<BasicDialog> {
@@ -99,11 +123,11 @@ class _BasicDialogState extends State<BasicDialog> {
         height: ScreenUtil().setWidth(34),
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Text(
-          widget.tittle ?? 'Example tittle',
+          widget.title ?? 'Example tittle',
           textAlign: TextAlign.center,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: widget.tittleStyle ??
+          style: widget.titleStyle ??
               TextStyle(
                   fontSize: ScreenUtil().setWidth(30),
                   color: Color.fromRGBO(42, 42, 48, 1),

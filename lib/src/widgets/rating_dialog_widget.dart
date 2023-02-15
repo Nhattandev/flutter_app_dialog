@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app_dialog/flutter_app_dialog.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,31 +33,73 @@ import 'package:rxdart/rxdart.dart';
 /// [onRatingCancel] handle func when cancel rating
 ///
 class RatingDialog extends StatefulWidget {
-  final double dialogHeight;
-  final double dialogWidth;
-  final Widget icon;
-  final double topDialogWidth;
-  final double topDialogHeight;
-  final String tittle;
-  final TextStyle tittleStyle;
-  final String description;
-  final String positiveButtonName;
-  final TextStyle positiveButtonStyle;
-  final String negativeButtonName;
-  final String negativeButtonStyle;
-  final String descriptionStyle;
-  final Function onRatingSubmit;
-  final Function onRatingCancel;
-  final Color positiveRatingColor;
-  final Color negativeRatingColor;
+  final double? dialogHeight;
+
+  /// Set dialog height
+  ///
+  /// Default value is 300
+  final double? dialogWidth;
+
+  /// Dialog width
+  ///
+  /// Default value is MediaQuery.of(context).size.width(Full size of screen)
+  final Widget? icon;
+
+  /// Icon of rating
+  final double? topDialogWidth;
+
+  /// Top dialog width
+  ///
+  /// Default value is MediaQuery.of(context).size.width (full size width)
+  final double? topDialogHeight;
+
+  /// Top dialog height, default value is 90
+  final String? title;
+
+  /// Title of rating dialog
+  final TextStyle? titleStyle;
+
+  /// Title style
+  final String? description;
+
+  /// Description
+  final String? positiveButtonName;
+
+  /// Positive button name, default is 'Submit'
+  final TextStyle? positiveButtonStyle;
+
+  /// Positive button style
+  final String? negativeButtonName;
+
+  /// Negative button name, default is 'Cancel'
+  final TextStyle? negativeButtonStyle;
+
+  /// Negative button style
+  final TextStyle? descriptionStyle;
+
+  /// Description style
+  final Function? onRatingSubmit;
+
+  /// Function when click to rating icon, result is value as [Int] ex: 1,2,3,4,5
+  ///
+  /// Value is 3 meaning 3/5 point
+  final Function? onRatingCancel;
+
+  /// Function when user cancel rating after close dialog
+  final Color? positiveRatingColor;
+
+  /// Positive rating color
+  final Color? negativeRatingColor;
+
+  /// Negative rating color
 
   const RatingDialog({
-    Key key,
+    Key? key,
     this.dialogHeight,
     this.dialogWidth,
     this.icon,
-    this.tittle,
-    this.tittleStyle,
+    this.title,
+    this.titleStyle,
     this.description,
     this.descriptionStyle,
     this.onRatingSubmit,
@@ -75,7 +119,7 @@ class RatingDialog extends StatefulWidget {
 }
 
 class _RatingDialogState extends State<RatingDialog> {
-  int rateCount;
+  int? rateCount;
 
   final rateCountBloc = BehaviorSubject<int>();
 
@@ -137,12 +181,14 @@ class _RatingDialogState extends State<RatingDialog> {
       width: MediaQuery.of(context).size.width,
       height: ScreenUtil().setHeight(40),
       child: Text(
-        widget.tittle ?? 'Enjoying MyApp ?',
+        widget.title ?? 'Enjoying MyApp ?',
         textAlign: TextAlign.center,
         maxLines: 2,
-        style: widget.tittleStyle ??
+        style: widget.titleStyle ??
             TextStyle(
-                fontSize: ScreenUtil().setSp(20), color: Color.fromRGBO(42, 42, 48, 1), fontWeight: FontWeight.bold),
+                fontSize: ScreenUtil().setSp(20),
+                color: Color.fromRGBO(42, 42, 48, 1),
+                fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -169,7 +215,7 @@ class _RatingDialogState extends State<RatingDialog> {
 
   ///Tan.nguyen 8/11/20 : build rating button
   Widget buildRatingButton() {
-    return StreamBuilder(
+    return StreamBuilder<int>(
       stream: rateCountBloc.stream,
       initialData: 0,
       builder: (context, snapshot) {
@@ -177,7 +223,7 @@ class _RatingDialogState extends State<RatingDialog> {
           rateCount = snapshot.data;
           List<Icon> listRating = [];
           for (int i = 1; i <= 5; i++) {
-            if (i <= rateCount) {
+            if (i <= rateCount!) {
               listRating.add((Icon(
                 Icons.star,
                 size: 40,
@@ -196,7 +242,8 @@ class _RatingDialogState extends State<RatingDialog> {
               height: ScreenUtil().setHeight(50),
               child: Center(
                 child: ListView.separated(
-                    separatorBuilder: ((BuildContext context, int index) => SizedBox(
+                    separatorBuilder: ((BuildContext context, int index) =>
+                        SizedBox(
                           width: 15,
                         )),
                     shrinkWrap: true,
@@ -235,7 +282,7 @@ class _RatingDialogState extends State<RatingDialog> {
                       onTap: () {
                         Navigator.pop(context);
                         if (widget.onRatingCancel != null) {
-                          widget.onRatingCancel();
+                          widget.onRatingCancel!();
                         }
                       },
                       child: Container(
@@ -243,7 +290,9 @@ class _RatingDialogState extends State<RatingDialog> {
                         child: Text(
                           widget.negativeButtonName ?? 'Cancel',
                           style: widget.negativeButtonStyle ??
-                              TextStyle(fontSize: ScreenUtil().setSp(20), color: Colors.blue),
+                              TextStyle(
+                                  fontSize: ScreenUtil().setSp(20),
+                                  color: Colors.blue),
                         ),
                       ),
                     ),
@@ -251,7 +300,7 @@ class _RatingDialogState extends State<RatingDialog> {
                     InkWell(
                       onTap: () {
                         if (widget.onRatingSubmit != null) {
-                          widget.onRatingSubmit(snapshot.data);
+                          widget.onRatingSubmit!(snapshot.data);
                         }
                         Navigator.pop(context);
                       },
@@ -259,7 +308,9 @@ class _RatingDialogState extends State<RatingDialog> {
                         child: Text(
                           widget.positiveButtonName ?? 'Submit',
                           style: widget.positiveButtonStyle ??
-                              TextStyle(fontSize: ScreenUtil().setSp(20), color: Colors.blue),
+                              TextStyle(
+                                  fontSize: ScreenUtil().setSp(20),
+                                  color: Colors.blue),
                         ),
                       ),
                     ),

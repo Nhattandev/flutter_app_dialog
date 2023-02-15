@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,22 +24,54 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///
 ///
 class PaymentDialog extends StatefulWidget {
-  final double dialogHeight;
-  final double dialogWidth;
-  final IconData icon;
-  final Color iconColor;
-  final double iconSize;
-  final String paymentStatus;
-  final TextStyle paymentStatusStyle;
-  final String message;
-  final TextStyle messageStyle;
-  final String buttonName;
-  final Color buttonColor;
-  final TextStyle buttonStyle;
-  final Function onPressButton;
+  final double? dialogHeight;
+
+  /// Dialog height
+  ///
+  /// Default value is 300
+  final double? dialogWidth;
+
+  /// Dialog width
+  ///
+  /// Default value is MediaQuery.of(context).size.width(Full size of screen)
+  final Icon? icon;
+
+  /// Icon of payment status
+  final Color? iconColor;
+
+  /// Icon color of payment status
+  ///
+  /// Default is Color.fromRGBO(126, 211, 33, 1)
+  final double? iconSize;
+
+  ///  Set iconSize default value is 50
+  final String? paymentStatus;
+
+  /// [paymentStatus] as String: ex: Successful, or fail from partner, etc
+  final TextStyle? paymentStatusStyle;
+
+  /// Payment status style
+  final String? message;
+
+  /// Display message of dialog
+  final TextStyle? messageStyle;
+
+  /// Message text style
+  final String? buttonName;
+
+  /// Button name as String: ex: ok, confirm
+  final Color? buttonColor;
+
+  /// Button color default value is Color.fromRGBO(59, 183, 207, 1)
+  final TextStyle? buttonStyle;
+
+  /// Button style as TextStyle
+  final Function? onPressButton;
+
+  /// Function on press button
 
   const PaymentDialog(
-      {Key key,
+      {Key? key,
       this.dialogHeight,
       this.dialogWidth,
       this.icon,
@@ -134,7 +165,9 @@ class _PaymentDialogState extends State<PaymentDialog> {
         textAlign: TextAlign.center,
         style: widget.messageStyle ??
             TextStyle(
-                color: Color.fromRGBO(69, 90, 100, 1), fontSize: ScreenUtil().setSp(24), fontWeight: FontWeight.bold),
+                color: Color.fromRGBO(69, 90, 100, 1),
+                fontSize: ScreenUtil().setSp(24),
+                fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -154,7 +187,11 @@ class _PaymentDialogState extends State<PaymentDialog> {
         },
         child: Text(
           widget.buttonName ?? "OK",
-          style: widget.buttonStyle ?? TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+          style: widget.buttonStyle ??
+              TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
         ),
       ),
     );

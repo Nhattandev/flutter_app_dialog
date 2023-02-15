@@ -16,9 +16,9 @@ Add `flutter_app_dialog` to your `pubspec.yaml` dependencies.
               builder: (BuildContext context) {
                 return BaseDialogWidget(
                   child: BasicDialog(
-                    tittle: 'tittle',
+                    title: 'tittle',
                     content: 'Your message',
-                    tittleStyle: TextStyle(color: Colors.blue),
+                    titleStyle: TextStyle(color: Colors.blue),
                     iconColor: Colors.red,
                     contentStyle: TextStyle(color: Colors.blue),
                   ),
@@ -34,9 +34,9 @@ Add `flutter_app_dialog` to your `pubspec.yaml` dependencies.
                 builder: (BuildContext context) {
                   return BaseDialogWidget(
                     child: InfoDialog(
-                      tittle: 'Info Dialog',
+                      title: 'Info Dialog',
                       content: 'Your message',
-                      tittleStyle: TextStyle(color: Colors.blue),
+                      titleStyle: TextStyle(color: Colors.blue),
                       contentStyle: TextStyle(color: Colors.blue),
                     ),
                   );
@@ -51,7 +51,7 @@ Add `flutter_app_dialog` to your `pubspec.yaml` dependencies.
                 builder: (BuildContext context) {
                   return BaseDialogWidget(
                     child: NoInternetConnectionDialog(
-                      tittle: 'No internet connection',
+                      title: 'No internet connection',
                       content: 'Please check your connection status and try again',
                     ),
                   );
@@ -88,8 +88,8 @@ Add `flutter_app_dialog` to your `pubspec.yaml` dependencies.
                 builder: (BuildContext context) {
                   return BaseDialogWidget(
                     child: RatingDialog(
-                      tittle: 'Enjoying MyApp',
-                      tittleStyle: TextStyle(color: Color.fromRGBO(42, 42, 48, 1), fontWeight: FontWeight.bold),
+                      title: 'Enjoying MyApp',
+                      titleStyle: TextStyle(color: Color.fromRGBO(42, 42, 48, 1), fontWeight: FontWeight.bold),
                       description: 'Tap a start to rate it on the App Store.',
                       positiveRatingColor: Colors.blue,
                       negativeRatingColor: Colors.blue,

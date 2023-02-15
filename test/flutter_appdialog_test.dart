@@ -8,7 +8,7 @@ void main() {
     testWidgets('Test Basic dialog', (WidgetTester tester) async {
       await tester.pumpWidget(RootPage(
         body: BasicDialog(
-          tittle: 'Alert',
+          title: 'Alert',
           content: 'This is a basic dialog',
         ),
       ));
@@ -20,7 +20,7 @@ void main() {
     testWidgets('Test info dialog', (WidgetTester tester) async {
       await tester.pumpWidget(RootPage(
         body: InfoDialog(
-          tittle: 'Tittle',
+          title: 'Tittle',
           content: 'This is a info dialog',
         ),
       ));
@@ -33,15 +33,14 @@ void main() {
 }
 
 class RootPage extends StatelessWidget {
-  final Widget body;
+  final Widget? body;
 
-  const RootPage({Key key, this.body}) : super(key: key);
+  const RootPage({Key? key, this.body}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      allowFontScaling: false,
-      builder: () => MaterialApp(
+      builder: (BuildContext context, child) => MaterialApp(
           home: Scaffold(
               appBar: AppBar(
                 title: Text('Root Page'),

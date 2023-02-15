@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      builder: () => MaterialApp(
+      builder: (BuildContext context, child) => MaterialApp(
         theme: ThemeData(
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _baseButton(
                 buttonName: 'Basic Dialog',
                 dialogWidget: BasicDialog(
-                  tittle: 'tittle',
+                  title: 'tittle',
                   content: 'Your message',
                 )),
             SizedBox(
@@ -68,13 +68,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             ///Tan.nguyen 6/21/20 : build no internet connection dialog
-            _baseButton(buttonName: 'No Internet Connection', dialogWidget: NoInternetConnectionDialog()),
+            _baseButton(
+                buttonName: 'No Internet Connection',
+                dialogWidget: NoInternetConnectionDialog()),
             SizedBox(
               height: 20,
             ),
 
             ///Tan.nguyen 6/21/20 : build payment dialog
-            _baseButton(buttonName: 'Payment Dialog', dialogWidget: PaymentDialog()),
+            _baseButton(
+                buttonName: 'Payment Dialog', dialogWidget: PaymentDialog()),
             SizedBox(
               height: 20,
             ),

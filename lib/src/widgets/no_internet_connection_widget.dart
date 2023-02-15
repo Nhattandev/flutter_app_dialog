@@ -20,14 +20,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///
 class NoInternetConnectionDialog extends StatefulWidget {
   const NoInternetConnectionDialog(
-      {Key key,
+      {Key? key,
       this.dialogWidth,
       this.dialogHeight,
       this.topDialogWidth,
       this.topDialogHeight,
       this.topDialogColor,
-      this.tittle,
-      this.tittleStyle,
+      this.title,
+      this.titleStyle,
       this.centerDialogWidth,
       this.centerDialogHeight,
       this.content,
@@ -35,23 +35,47 @@ class NoInternetConnectionDialog extends StatefulWidget {
       : super(key: key);
 
   @override
-  _NoInternetConnectionDialogState createState() => _NoInternetConnectionDialogState();
-  final double dialogWidth;
-  final double dialogHeight;
+  _NoInternetConnectionDialogState createState() =>
+      _NoInternetConnectionDialogState();
+  final double? dialogWidth;
 
-  final double topDialogWidth;
-  final double topDialogHeight;
-  final Color topDialogColor;
-  final String tittle;
-  final TextStyle tittleStyle;
+  /// Dialog width
+  ///
+  /// Default value is MediaQuery.of(context).size.width(Full size of screen)
+  final double? dialogHeight;
 
-  final double centerDialogWidth;
-  final double centerDialogHeight;
-  final String content;
-  final TextStyle contentStyle;
+  /// Dialog height, default value is 300
+  final double? topDialogWidth;
+
+  /// Top dialog width
+  final double? topDialogHeight;
+
+  /// Top dialog height
+  final Color? topDialogColor;
+
+  /// Top dialog color
+  final String? title;
+
+  /// Title as String
+  final TextStyle? titleStyle;
+
+  /// Title Style
+  final double? centerDialogWidth;
+
+  /// Center dialog width
+  final double? centerDialogHeight;
+
+  /// Center dialog height
+  final String? content;
+
+  /// Content as String
+  final TextStyle? contentStyle;
+
+  /// Content style
 }
 
-class _NoInternetConnectionDialogState extends State<NoInternetConnectionDialog> {
+class _NoInternetConnectionDialogState
+    extends State<NoInternetConnectionDialog> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -71,7 +95,9 @@ class _NoInternetConnectionDialogState extends State<NoInternetConnectionDialog>
   Widget buildTopDialog() {
     return Container(
       width: widget.topDialogWidth ?? MediaQuery.of(context).size.width,
-      height: widget.topDialogHeight ?? widget.dialogHeight ?? ScreenUtil().setHeight(80),
+      height: widget.topDialogHeight ??
+          widget.dialogHeight ??
+          ScreenUtil().setHeight(80),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(5),
@@ -81,8 +107,12 @@ class _NoInternetConnectionDialogState extends State<NoInternetConnectionDialog>
       ),
       child: Center(
         child: Text(
-          widget.tittle ?? 'No Internet',
-          style: widget.tittleStyle ?? TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+          widget.title ?? 'No Internet',
+          style: widget.titleStyle ??
+              TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
         ),
       ),
     );
@@ -92,7 +122,9 @@ class _NoInternetConnectionDialogState extends State<NoInternetConnectionDialog>
   Widget buildCenterDialog() {
     return Container(
       width: widget.centerDialogWidth ?? MediaQuery.of(context).size.width,
-      height: widget.centerDialogHeight ?? widget.dialogHeight ?? ScreenUtil().setHeight(220),
+      height: widget.centerDialogHeight ??
+          widget.dialogHeight ??
+          ScreenUtil().setHeight(220),
       padding: EdgeInsets.only(left: 10, right: 10),
       color: Colors.white,
       child: Center(

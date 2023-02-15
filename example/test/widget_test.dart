@@ -58,7 +58,8 @@ void main() {
     });
 
     /// Test no connection dialog
-    testWidgets('Test no internet connection dialog', (WidgetTester tester) async {
+    testWidgets('Test no internet connection dialog',
+        (WidgetTester tester) async {
       await tester.pumpWidget(MyApp());
       // Tap the button.
       await tester.tap(find.widgetWithText(InkWell, 'No Internet Connection'));
@@ -105,7 +106,8 @@ void main() {
           ),
           findsNothing);
       expect(find.text('Enjoying MyApp ?'), findsOneWidget);
-      expect(find.text('Tap a start to rate it on the App Store.'), findsOneWidget);
+      expect(find.text('Tap a start to rate it on the App Store.'),
+          findsOneWidget);
       await tester.tap(find.widgetWithText(InkWell, 'Submit'));
       await tester.pump();
       expect(find.widgetWithText(InkWell, 'Submit'), findsNothing);
